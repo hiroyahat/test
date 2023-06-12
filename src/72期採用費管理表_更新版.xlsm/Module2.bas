@@ -33,16 +33,16 @@ Sub import_data()
         Set wbRef = Workbooks.Open(PathName)
        
         If wbRef Is Nothing Then
-            MsgBox "ƒtƒ@ƒCƒ‹–¼‚ğŠm”F‚µ‚Ä‚­‚¾‚³‚¢B"
+            MsgBox "ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚"
             Exit Sub
         End If
     Else
-    MsgBox "ƒtƒ@ƒCƒ‹–¼‚ğŠm”F‚µ‚Ä‚­‚¾‚³‚¢B"
+    MsgBox "ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚"
     Exit Sub
             
     End If
 
-    
+    on error goto 0
     Set wsRef = wbRef.Sheets(2)
     Set wsTarget = ThisWorkbook.Sheets(3)
     
@@ -50,7 +50,7 @@ Sub import_data()
     lastRow2 = wsRef.Cells(wsRef.Rows.Count, "A").End(xlUp).Row
     
     
-    answer = MsgBox("ƒV[ƒg‚Ì‚Qs–Ú‚©‚ç" & lastRow2 & "s–Ú‚ğ‘I‘ğ‚µ‚Ä‚¢‚Ü‚·B" & vbCrLf & "ƒCƒ“ƒ|[ƒg‚µ‚Ü‚·‚©H", vbQuestion + vbYesNo)
+    answer = MsgBox("ã‚·ãƒ¼ãƒˆã®ï¼’è¡Œç›®ã‹ã‚‰" & lastRow2 & "è¡Œç›®ã‚’é¸æŠã—ã¦ã„ã¾ã™ã€‚" & vbCrLf & "ã‚¤ãƒ³ãƒãƒ¼ãƒˆã—ã¾ã™ã‹ï¼Ÿ", vbQuestion + vbYesNo)
     Select Case answer
         Case vbYes
         
@@ -75,16 +75,16 @@ Sub import_data()
         
         Call make_lines
     
-        MsgBox "“Ç‚İæ‚è‚ªŠ®—¹‚µ‚Ü‚µ‚½B"
+        MsgBox "èª­ã¿å–ã‚ŠãŒå®Œäº†ã—ã¾ã—ãŸã€‚"
         
         wbRef.Close
         
-        MsgBox "ƒf[ƒ^‚Í" & lastRow + 1 & "s–ÚˆÈ~‚ÉŠi”[‚³‚ê‚Ä‚¢‚Ü‚·B" & vbCrLf & "Šm”F‚µ‚Ä‚­‚¾‚³‚¢B"
+        MsgBox "ãƒ‡ãƒ¼ã‚¿ã¯" & lastRow + 1 & "è¡Œç›®ä»¥é™ã«æ ¼ç´ã•ã‚Œã¦ã„ã¾ã™ã€‚" & vbCrLf & "ç¢ºèªã—ã¦ãã ã•ã„ã€‚"
         
         ActiveSheet.Cells(lastRow, 1).Select
         
-        If InStr(1, wsTarget.Cells(lastRow + i - 1, 5), "Šw¶Œğ’Ê”ï") = 0 Then
-            MsgBox ("‹L“ü‚Ì•s”õ‚ª‚ ‚è‚Ü‚·B" & vbCrLf & "‰©F‚­•Ï‰»‚µ‚½•”•ª‚ğŠm”F‚µ‚Ä‚­‚¾‚³‚¢B")
+        If InStr(1, wsTarget.Cells(lastRow + i - 1, 5), "å­¦ç”Ÿäº¤é€šè²»") = 0 Then
+            MsgBox ("è¨˜å…¥ã®ä¸å‚™ãŒã‚ã‚Šã¾ã™ã€‚" & vbCrLf & "é»„è‰²ãå¤‰åŒ–ã—ãŸéƒ¨åˆ†ã‚’ç¢ºèªã—ã¦ãã ã•ã„ã€‚")
         End If
         
     End Select
@@ -95,7 +95,7 @@ Sub OpenButton()
 
 Dim answer As Byte
     
-    answer = MsgBox("ƒtƒ@ƒCƒ‹‚ğŠJ‚«‚Ü‚·‚©H", vbYesNo + vbQuestion)
+    answer = MsgBox("ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ãã¾ã™ã‹ï¼Ÿ", vbYesNo + vbQuestion)
     
     If answer = vbYes Then
        Call check_file
@@ -140,10 +140,10 @@ Sub TPexpense()
     i = 2
     For i = 2 To lastRow2
        
-        If wsRef.Cells(i, 4).Value = "Šw¶Œğ’Ê”ï" Then
-            wsTarget.Cells(lastRow + i - 1, 2).Value = "V‘²"
-            wsTarget.Cells(lastRow + i - 1, 4).Value = "‘IlŒğ’Ê”ï"
-                If InStr(1, wsTarget.Cells(lastRow + i - 1, 5), "Šw¶Œğ’Ê”ï") = 0 Then
+        If wsRef.Cells(i, 4).Value = "å­¦ç”Ÿäº¤é€šè²»" Then
+            wsTarget.Cells(lastRow + i - 1, 2).Value = "æ–°å’"
+            wsTarget.Cells(lastRow + i - 1, 4).Value = "é¸è€ƒäº¤é€šè²»"
+                If InStr(1, wsTarget.Cells(lastRow + i - 1, 5), "å­¦ç”Ÿäº¤é€šè²»") = 0 Then
                     wsTarget.Range("A" & lastRow + i - 1 & ":G" & lastRow + i - 1).Interior.ColorIndex = 6
                 End If
         End If
