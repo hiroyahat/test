@@ -98,6 +98,7 @@ Dim answer As Byte
     
     answer = MsgBox("ファイルを開きますか？", vbYesNo + vbQuestion)
     
+    'yesを押した場合
     If answer = vbYes Then
        PathName = Sheets(3).Cells(3, 5).Value
        On Error Resume Next
