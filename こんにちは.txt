@@ -1,3 +1,5 @@
 こんにちは
 こんばんは
-Guten Morgen
+
+Hello
+
