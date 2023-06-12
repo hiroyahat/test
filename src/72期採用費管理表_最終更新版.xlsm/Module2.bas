@@ -11,7 +11,7 @@ Dim i As Long
 
 
 
-
+'データをインポート
 Sub import_data()
     
     Dim rngRefdate As Range
